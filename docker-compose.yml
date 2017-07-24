@@ -1,0 +1,38 @@
+version: "2"
+services:
+  web:
+    build: ./docker/web
+    ports:
+      - "3000:3000"
+    links:
+      - db
+      - memcached
+      - elasticsearch
+    volumes:
+      - ./app/public:/code
+    working_dir: /code
+    command: php -S 0.0.0.0:3000
+    container_name: web
+
+  db:
+    image: "mysql:5.7"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      # If you want to set mysql user manually, remove these comments:
+      # MYSQL_USER: user
+      # MYSQL_PASSWORD: password
+      MYSQL_DATABASE: app
+      MYSQL_HOST: ""
+    mem_limit: 1000000000
+    ports:
+      - "3306:3306"
+    container_name: db
+
+  elasticsearch:
+    image: "elasticsearch:2.4"
+    container_name: elasticsearch
+
+  memcached:
+    image: "memcached:1.4"
+    container_name: memcached
+
