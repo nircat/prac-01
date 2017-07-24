@@ -16,7 +16,7 @@ docker-compose up
 
 Go to http://localhost:3000/ and you can see PHP works.
 
-### Version
+## Version
 php :5.6
 MySQL :5.7
 memcached :1.4
