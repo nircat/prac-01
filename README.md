@@ -1,14 +1,18 @@
-# docker-lamp
+# prac-01
 
+## 練習用ガラクタ集
+|ファイル名|内容|
+|------|------|
+|index.php|SQL接続確認|
+|api.php|curlによるapi関連所作|
+|fizzbuzz.php|いろんなFizzBuZZ|
+|sql.php|テーブル内容表示|
+
+### setup
 Development environment built with docker-compose
-
-## setup
-
-### Clone this repository
-
 ```
-git clone https://github.com/nircat/docker-lamp.git
-cd docker-lamp
+git clone https://github.com/nircat/[this repo]
+cd [this dir]
 docker-compose up
 ```
 
